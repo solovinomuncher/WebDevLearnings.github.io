@@ -314,12 +314,84 @@
             </p>
             <p>
                 To create, iframe src width height. Best to use style iframe border:none under head element to
-                display w/o borders. Can also add fallback content. Best to add sandbox attribute to request 
-                heightened security settings (more on this later).
+                display w/o borders. Can also add fallback content.
             </p>
             <p>
                 Since there are security concerns with regards to iframes, best practices are: only embed when 
-                necessary, use https (GitHub pages does this by default). 
+                necessary, use https (GitHub pages does this by default), always use sandbox attribute, configure
+                CSP directives. Outside of scope atm.  
+            </p>
+            <p>
+                The embed and object elements aren't used very much anymore, mostly in intranets and enterprise
+                projects. As for plugins: just use browser Web techs instead. Everyone has a browser, but not 
+                everyone has a plugin. More secure/convenient to use Web techs. 
+            </p>
+            <h3>Vector Graphics</h3>
+            <p>
+                Two types of images on the web: raster images and vector images. Raster images defined using a grid
+                of pixels (e.g. bmp, png, jpeg, gif). Vector images defined using algorithms (e.g. SVG format). 
+            </p>
+            <p>
+                The difference is that vector images remain crisp and clear as you zoom in -- pixel size doesn't change, 
+                but the algorithm adjusts.
+            </p>
+            <p>
+                SVG is an XML-based language for describing vector images. Like HTML, but for marking up graphics, 
+                not content. Very difficult to handcode complex images, so best to use vector graphics editor like 
+                Inkscape or Illustrator. 
+            </p>
+            <p>
+                Use raster over SVG if processing time is important, want simpler, less time consuming images, or 
+                want support in older browsers. 
+            </p>
+            <p>
+                Suffice to say, either embed in img element, or in svg element. Outside of scope, just be able to 
+                recognize.
+            </p>
+            <h3>Responsive Images</h3>
+            <p>
+                These are images that work well on devices with widely different screen sizes, resolutions, and other
+                features. When considering this, often come across the art direction problem, where you want to serve
+                diff cropped images in that way, for various layouts. 
+            </p>
+            <p>
+                When considering smaller or larger images, you come across the resolution switching problem, where 
+                you consider whether to use small or large image. 
+            </p>
+            <p>
+                Vector images help, and you should use them wherever possible, but they're only really great for simple
+                graphics, patterns, interface elements, etc. Not for photo-detail level images.
+            </p>
+            <p>
+                One way to solve the resolution switching problem is to use the srcset and sizes attributes in img element 
+                to add more source images, with hints to help browsers pick the right one. 
+            </p>
+            <p>
+                To create a srcset attribute, img srcset="file.jpg 100w". The 100w uses the image's real width, found
+                by inspecting the image file. Separate multiple imgs within srcset with a comma. Following srcset, to 
+                create a sizes attribute, sizes="(mediaCondition) 400px, 800px". The mediaCondition is outside of scope,
+                just know that it describes a possible state the screen can be in. The 400px is the width of the slot 
+                the image will fill when mediaCondition is true.
+            </p>
+            <p>
+                The browser will look at its device width, look for which media condition in sizes is the first to be 
+                true, looks at the slot size given, then load the image referenced in srcset that has the same size or
+                the first image that is bigger than the chosen slot size. This method can save a lot of bandwidth.
+            </p>
+            <p>
+                Another way to solve the resolution switching problem is to allow the browser to choose an appropriate 
+                resolution image by using srcset with x-descriptors and w/o sizes. 
+            </p>
+            <p>
+                To create these types, img srcset="file.jpg, file.jpg 1.5x, file.jpg 2x" src alt. The browser will choose
+                which image works best with the display it's on.
+            </p>
+            <p>
+                One way to solve the art direction problem is to use the picture element to show a more appropriate
+                portrait image.  
+            </p>
+            <p>
+                asdf
             </p>
         </article>
     </body>
