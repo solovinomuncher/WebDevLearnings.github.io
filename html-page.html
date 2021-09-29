@@ -16,7 +16,7 @@
         <p>
             This page goes over all things HTML when building a website, from my own perspective. 
             Not so much a teaching page as a personal reminder on how to do this, IMOW, as a quick 
-            reference. Good practice, too.
+            reference.
         </p>
         <h2>Before you Start</h2>
         <p>
@@ -237,5 +237,90 @@
             You can provide web address, HTML file, or HTML code. It's a good idea to fix a few errors at
             a time. 
         </p>
+        <article>
+            <h2>Multimedia and Embedding</h2>
+            <h3>Images in HTML</h3>
+            <p>
+                To add images on webpage, use img element with src attribute. AKA img src. 
+                WARNING: beware of copyright. Only use images you own, that are in the public domain, or
+                you have permission to use. Also, never hotlink to images on other servers without permission.
+            </p>
+            <p>
+                Use alt attribute to describe image in case it can't be seen, to still deliver usable experience. 
+            </p>
+            <p>
+                Use width and height attributes to leave space for image (page loads quicker) but preferably
+                use image editor (or CSS) to get correct aspect ratio.
+            </p>
+            <p>
+                Use figure and figcaption to add figures and figure captions to images. Figure contains image 
+                and figcaption. Looks like this: figure img src alt figcaption. A figure doesn't have to be 
+                an image, it can be anything that:
+            </p>
+            <ul>
+                <li>expresses your meaning in compact, easy-to-grasp way</li>
+                <li>could go in several places in page's linear flow (???)</li>
+                <li>provides essential info supporting main text</li>
+            </ul>
+            <p>
+                e.g. many imgs, code snippet, audio, video, equations, table, etc.
+            </p>
+            <p>
+                Can also use CSS and JavaScript to embed images into webpages, outside of scope atm.
+                If image has meaning, use HTML image. If image is decoration only, use CSS background image.
+            </p>
+            <h3>Video and Audio Content</h3>
+            <p>
+                A bit of history: early bandwidth only supported text and images, then plugins like Flash
+                and Silverlight were used to embed videos (both obsolete now). Then HTML5 specs added video 
+                and audio elements, with new JavaScript APIs to control them. 
+            </p>
+            <p>
+                You can either host your own videos and audio, which uses up a ton of bandwidth, or use 
+                online video providers (YouTube and the like) and embed them into your webpages (more on 
+                this later).
+            </p>
+            <p>
+                Use video element to embed videos. Usually video src controls p. You can use controls attribute or
+                appropriate JavaScript API. The p contains fallback content, displayed if browser accessing page
+                doesn't support video element.
+            </p>
+            <p>
+                Sometimes video/audio won't play because diff browsers support diff video/audio formats (AKA 
+                container formats). These container formats contain media structure, metadata, codecs used, etc.
+                Metadata can be title, duration, track types, etc. Tracks can be audio, video, text. Codex compress 
+                video/audio into manageable files. Complex, outside of scope atm.
+            </p>
+            <p>
+                Video element features to know about: width, height, autoplay, loop, muted, poster, preload.
+            </p>
+            <p>
+                Audio element supports all same features as video.
+            </p>
+            <p>
+                To create video text tracks, use WebVTT file format and track element. Looks like track kind src 
+                label, and is within video element. Outside of scope atm.
+            </p>
+            <h3>Other Embedding Techs</h3>
+            <p>
+                A bit of history: framesets containing frames used to create websites, then plugin techs like 
+                Java Applets and Flash used to embed rich content (often used object and embed elements), then 
+                the iframe element can embed entire web docs inside another, as if it were just another element.
+            </p>
+            <p>
+                In general, iframe good for incorporating 3rd-party content into website (no need to implement 
+                your own version). YouTube has iframe element code under Share button that easily embeds given 
+                video to website. e.g. video, commenting systems, maps, ads, etc.
+            </p>
+            <p>
+                To create, iframe src width height. Best to use style iframe border:none under head element to
+                display w/o borders. Can also add fallback content. Best to add sandbox attribute to request 
+                heightened security settings (more on this later).
+            </p>
+            <p>
+                Since there are security concerns with regards to iframes, best practices are: only embed when 
+                necessary, use https (GitHub pages does this by default). 
+            </p>
+        </article>
     </body>
 </html>
