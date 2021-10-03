@@ -8,7 +8,7 @@
         <link href="styles/styles-1.css" rel="stylesheet"> <!--link to css sheet-->
         <link rel="preconnect" href="https://fonts.googleapis.com"> <!--link to font (3)-->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1>on HTML Basics, Intermediate, and Advanced</h1>
@@ -389,6 +389,47 @@
             <p>
                 One way to solve the art direction problem is to use the picture element to show a more appropriate
                 portrait image.  
+            </p>
+            <p>
+                To create a picture element, picture source media srcset img src. The source element includes a media
+                attribute that contains a media condition. The first one that returns true will be displayed. e.g. if 
+                viewport width is 799 or less, display first image. If 800 or more, display second image. The srcset 
+                attribute contains the path to the image to display. The img element is a default case when no media
+                conditions return true. This allows us to display a suitable image on both wide screen and narrow screen
+                displays. 
+            </p>
+            <p>
+                NOTE: You should media attribute only in art direction scenarios.
+            </p>
+            <p>
+                Browser preloads images before CSS and JS, thus needing HTML's srcset to choose the correct image. 
+            </p>
+            <p>
+                There's also WebP and AVIF image formats, which allows for low file size and high quality at the same
+                time, but may not be supported by older browsers.
+            </p>
+            <p>
+                An easy way to resize photos is to use Windows' native Photos app: open the image in the app, click on
+                the three dots in the top-right, resize, define custom dimensions, and maintain aspect ratio so that when 
+                you change the width, the image will adjust the height to match the original ratio dimensions.
+            </p>
+        </article>
+        <article>
+            <h2>HTML Tables</h2>
+            <h3>HTML Table Basics</h3>
+            <p>
+                Table = structured set of data made up of rows and columns (tabular data). 
+            </p>
+            <p>
+                To create: table tr td. TR to create table row, TD to create table column.
+            </p>
+            <p>
+                To create table headers, th. Works same as td, but denotes header. Associates each header with all the 
+                data in the same row or column.
+            </p>
+            <p>
+                Can use the colspan and rowspan attributes in table headers for the headers to span a given number of 
+                columns/rows. colspan="2" has the header cell span two columns.
             </p>
             <p>
                 asdf
