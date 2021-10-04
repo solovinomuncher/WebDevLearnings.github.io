@@ -8,9 +8,181 @@
         <link href="styles/styles-1.css" rel="stylesheet"> <!--link to css sheet-->
         <link rel="preconnect" href="https://fonts.googleapis.com"> <!--link to font (3)-->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1>on CSS Basics, Intermediate, Advanced</h1>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                This page goes over all things CSS when building a website, from my own
+                perspective. Not so much a teaching page as a personal reminder on how to
+                do this, IMOW, as a quick reference.
+            </p>
+        </section>
+        <nav>
+            <h2>Index</h2>
+            <ul>
+                <li><a href="#what-is-css">What is CSS?</a></li>
+                <li><a href="#getting-started-with-css">Getting Started with CSS</a></li>
+                <li><a href="#how-css-is-structured">How CSS is Structured</a></li>
+                <li><a href="#how-css-works">How CSS Works</a></li>
+                <li><a href="#cascade-and-inheritance">Cascade and Inheritance</a></li>
+                <li><a href="#css-selectors">CSS Selectors</a></li>
+                <li><a href="#the-box-model">The Box Model</a></li>
+                <li><a href="#backgrounds-and-borders">Backgrounds and Borders</a></li>
+                <li><a href="#handling-different-text-directions">Handling Different Text Directions</a></li>
+                <li><a href="#overflowing-content">Overflowing Content</a></li>
+                <li><a href="#values-and-units">Values and Units</a></li>
+                <li><a href="#sizing-items-in-css">Sizing Items in CSS</a></li>
+                <li><a href="#images-media-and-form-elements">Images, Media, and Form Elements</a></li>
+                <li><a href="#styling-tables">Styling Tables</a></li>
+                <li><a href="#debugging-css">Debugging CSS</a></li>
+                <li><a href="#organizing-your-css">Organizing your CSS</a></li>
+                <li><a href="#fundamental-text-and-font-styling">Fundamental Text and Font Styling</a></li>
+                <li><a href="#styling-lists">Styling Lists</a></li>
+                <li><a href="#styling-links">Styling Links</a></li>
+                <li><a href="#web-fonts">Web Fonts</a></li>
+                <li><a href="#intro-to-css-layout">Intro to CSS Layout</a></li>
+                <li><a href="#normal-flow">Normal Flow</a></li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grids">Grids</a></li>
+                <li><a href="#floats">Floats</a></li>
+                <li><a href="#positioning">Positioning</a></li>
+                <li><a href="#multiple-column-layout">Multiple-Column Layout</a></li>
+                <li><a href="#responsive-design">Responsive Design</a></li>
+                <li><a href="#beginners-guide-to-media-queries">Beginner's Guide to Media Queries</a></li>
+                <li><a href="#legacy-layout-methods">Legacy Layout Methods</a></li>
+                <li><a href="#supporting-older-browsers">Supporting Older Browsers</a></li>
+            </ul>
+        </nav>
+        <article id="what-is-css">
+            <h2>What is CSS?</h2>
+            <p>
+                Without CSS, HTML file has internal stylesheets with basic default styles to be 
+                basically readable. With CSS, HTML file has text styling, layout, and animations.
+            </p>
+            <p>
+                CSS rules start with selector, then curly braces, then declarations (which
+                are property and value pairs separated by colons and ending with semicolons).
+            </p>
+        </article>
+        <article id="getting-started-with-css">
+            <h2>Getting Started with CSS</h2>
+            <p>
+                There are three different ways to apply CSS to an HTML doc:
+            </p>
+            <ul>
+                <li>Linking to CSS doc from head of HTML doc (most useful/usual)</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <p>
+                To link CSS doc from head of HTML doc, use link element with rel and href 
+                attributes. rel tells the browser that we have a stylesheet (rel="stylesheet")
+                and href tells the browser the location of that stylesheet (href="styles.css").
+            </p>
+            <p>
+                The selectors target an HTML element to apply the declarations to. There can be
+                multiple selectors. To select specific elements, use the class attribute. To 
+                target specific elements, start with period (.) and name of class 
+                (e.g. class="special" -> .special {color: blue;}). To target specific subsets of 
+                elements, start with element, period, and class name (e.g. li.special {} to target
+                li elements that have a class of special).
+            </p>
+            <p>
+                It is sometimes best to bypass element and refer to class.
+            </p>
+            <p>
+                asdf
+            </p>
+        </article>
+        <article id="how-css-is-structured">
+            <h2>How CSS is Structured</h2>
+        </article>
+        <article id="how-css-works">
+            <h2>How CSS Works</h2>
+        </article>
+        <article id="cascade-and-inheritance">
+            <h2>Cascade and Inheritance</h2>
+        </article>
+        <article id="css-selectors">
+            <h2>CSS Selectors</h2>
+        </article>
+        <article id="the-box-model">
+            <h2>The Box Model</h2>
+        </article>
+        <article id="backgrounds-and-borders">
+            <h2>Backgrounds and Borders</h2>
+        </article>
+        <article id="handling-different-text-directions">
+            <h2>Handling Different Text Directions</h2>
+        </article>
+        <article id="overflowing-content">
+            <h2>Overflowing Content</h2>
+        </article>
+        <article id="values-and-units">
+            <h2>Values and Units</h2>
+        </article>
+        <article id="sizing-items-in-css">
+            <h2>Sizing Items in CSS</h2>
+        </article>
+        <article id="images-media-and-form-elements">
+            <h2>Images, Media, and Form Elements</h2>
+        </article>
+        <article id="styling-tables">
+            <h2>Styling Tables</h2>
+        </article>
+        <article id="debugging-css">
+            <h2>Debugging CSS</h2>
+        </article>
+        <article id="organizing-your-css">
+            <h2>Organizing your CSS</h2>
+        </article>
+        <article id="fundamental-text-and-font-styling">
+            <h2>Fundamental Text and Font Styling</h2>
+        </article>
+        <article id="styling-lists">
+            <h2>Styling Lists</h2>
+        </article>
+        <article id="styling-links">
+            <h2>Styling Links</h2>
+        </article>
+        <article id="web-fonts">
+            <h2>Web Fonts</h2>
+        </article>
+        <article id="intro-to-css-layout">
+            <h2>Intro to CSS Layout</h2>
+        </article>
+        <article id="normal-flow">
+            <h2>Normal Flow</h2>
+        </article>
+        <article id="flexbox">
+            <h2>Flexbox</h2>
+        </article>
+        <article id="grids">
+            <h2>Grids</h2>
+        </article>
+        <article id="floats">
+            <h2>Floats</h2>
+        </article>
+        <article id="positioning">
+            <h2>Positioning</h2>
+        </article>
+        <article id="multiple-column-layout">
+            <h2>Multiple-Column Layout</h2>
+        </article>
+        <article id="responsive-design">
+            <h2>Responsive Design</h2>
+        </article>
+        <article id="beginners-guide-to-media-queries">
+            <h2>Beginner's Guide to Media Queries</h2>
+        </article>
+        <article id="legacy-layout-methods">
+            <h2>Legacy Layout Methods</h2>
+        </article>
+        <article id="supporting-older-browsers">
+            <h2>Supporting Older Browsers</h2>
+        </article>
     </body>
 </html>
