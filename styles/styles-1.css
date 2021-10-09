@@ -94,10 +94,11 @@ input[type="submit"]:hover {
 }
 
 /* === link styling === */
+/*
 a {
   asdf
 }
-
+*/
 a:link {
   color: #0000FF;
   background: #BFFF00;
