@@ -99,13 +99,13 @@ a {
 }
 
 a:link {
-  color: blue;
-  background: lime;
+  color: #0000FF;
+  background: #BFFF00;
 }
 
 a:visited {
-  color: blue;
-  background: lime;
+  color: #0000FF;
+  background: #BFFF00;
 }
 
 a:focus {
@@ -114,12 +114,12 @@ a:focus {
 
 a:hover {
   text-decoration: none;
-  color: lime;
-  background: blue;
+  color: #BFFF00;
+  background: #0000FF;
 }
 
 a:active {
   text-decoration: none;
-  color: red;
-  background: rebeccapurple;
+  color: #FF0000;
+  background: #663399;
 }
