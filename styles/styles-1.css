@@ -70,3 +70,56 @@ tr:nth-child(odd) td {
 caption {
   padding: 10px;
 }
+
+/* === form styling === */
+input[type="text"],
+input[type="email"] {
+  border: 1px solid #000;
+  margin: 0 0 1em 0;
+  padding: 10px;
+  width: 50%;
+}
+
+input[type="submit"] {
+  border: 3px solid #333;
+  background-color: #999;
+  border-radius: 5px;
+  padding: 10px 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* === link styling === */
+a {
+  asdf
+}
+
+a:link {
+  color: blue;
+  background: lime;
+}
+
+a:visited {
+  color: blue;
+  background: lime;
+}
+
+a:focus {
+  asdf /* no styling */
+}
+
+a:hover {
+  text-decoration: none;
+  color: lime;
+  background: blue;
+}
+
+a:active {
+  text-decoration: none;
+  color: red;
+  background: rebeccapurple;
+}

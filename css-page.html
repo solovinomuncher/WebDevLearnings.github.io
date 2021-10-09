@@ -796,35 +796,441 @@
         <article id="images-media-and-form-elements">
             <h2>Images, Media, and Form Elements</h2>
             <p>
-                asdf
+                Replaced elements are those where CSS can't affect their internal layout, only their position amongst other 
+                elements. Images and videos are replaced elements.
             </p>
+            <p>
+                Some replaced elements have an aspect ratio, where it has a size in both horiz (x) and vert (y) dimensions, 
+                and will be displayed using the intrinsic dimensions of the file by default.
+            </p>
+            <p>
+                Common to handle overflow of images by making the max-width of an image 100%. Also works with video and iframe. 
+            </p>
+            <p>
+                If you want to size an image so it completely covers a box, can use object-fit property. Three diff values:
+                cover, sizes image down while maintaining aspect ratio, but some parts of image cropped by box; contain, 
+                scales image down until small enough to fit in box, results in "letterboxing"; and fill, which fill box but 
+                doesn't maintain aspect ratio.
+            </p>
+            <p>
+                In a flex or grid layout, elements stretched by default to fill entire area. Images will not stretch, and 
+                instead will be aligned to the start of the grid area or flex container.
+            </p>
+            <p>
+                KEY: Keep in mind that replaced elements, when they become part of a grid or flex layout, have diff default 
+                behaviors. essentially to avoid them being stretched strangely by the layout.
+            </p>
+            <p>
+                Forms added to webpage via input element. Defines simple form fields. The textarea element defines multiline 
+                text input. And fieldset and legend elements contain and label parts of forms. HTML5 has attributes that 
+                enable devs to indicate which fields are reqd, and even the type of content that needs to be entered. Out of 
+                scope, more on Web Forms module of Mozilla pathway.
+            </p>
+            <p>
+                Dealing with form elements in HTML:
+            </p>
+            <p>
+                <code>(form (div (label for="name" Name) (input type="text" id="name")))</code>
+            </p>
+            <p>
+                You should always assume forms are going to look diff for diff visitors, so test complex forms in a number of
+                browsers.
+            </p>
+            <p>
+                Some browsers don't inherit font styling by default. If you want it to, add inherit value to font-family. 
+            </p>
+            <p>
+                When styling forms, best to set padding and margin to 0 at first, then add them back in when styling particular 
+                controls. Should also set overflow: auto in textarea.
+            </p>
+            <!--
+            <form>
+                <div><label for="name">Name</label><input type="text" id="name"></div>
+            </form>
+            -->
         </article>
         <article id="styling-tables">
             <h2>Styling Tables</h2>
+            <p>
+                First, sort out the spacing/layout, as default is very cramped. 
+            </p>
+            <ul>
+                <li>
+                    table-layout: fixed; under table element. Generally a good idea to set, as it sets the column sizes
+                    according to the width of their headings. Select the th elements individually (using nth-child) and 
+                    give them set percentage widths. Give table element width of 100% to fill any container it's put in,
+                    and be nicely responsive.
+                </li>
+                <li>
+                    border-collapse: collapse; under table element. Default gives spacing between borders, doesn't look 
+                    nice. Collapse value brings them together.
+                </li>
+                <li>
+                    border under table element, any. Separate borders for table header and footer, so best to give table 
+                    itself borders as well.
+                </li>
+                <li>
+                    padding under th and td element, any. Makes data more legible, less cramped.
+                </li>
+            </ul>
+            <p>
+                Next, we can add some simple typography (read: fonts). Nothing specific to tables here, more to do with 
+                font styling.
+            </p>
+            <ul>
+                <li>
+                    set a global (read: under html element) font stack, with custom fonts on certain table elements, if 
+                    you wish. 
+                </li>
+                <li>
+                    optional letter-spacing for better readability. 
+                </li>
+                <li>
+                    text-align: center; under tbody, to line up with headings. Other text-align for aesthetic purposes. 
+                </li>
+            </ul>
+            <p>
+                Next, add some graphics and colors if you wish. Nothing specific to tables.
+            </p>
+            <ul>
+                <li>
+                    You can add background-image to thead and tfood elements. (always make sure text contrasts well with 
+                    background)
+                </li>
+                <li>
+                    You can add linear gradient to th and td elements inside header and footer (or others) for nicer
+                    texture.
+                </li>
+                <li>
+                    Popular to implement zebra stripes, alternating rows of colors that make diff data rows in table 
+                    easier to parse and read. Use nth-child(odd/even) to set the alternating colors. The odd/even can
+                    be replaced with a formula (!).
+                </li>
+            </ul>
+            <p>
+                Last thing's to style the caption. Can use caption-side property to position caption around the table.
+            </p>
+            <p>
+                Quick tips, to recap:
+            </p>
+            <ul>
+                <li>Make your table markup as simple as possible, and keep things flexible, e.g. by using percentages, so the design is more responsive.</li>
+                <li>Use table-layout: fixed to create a more predictable table layout that allows you to easily set column widths by setting width on their headings (< th >).</li>
+                <li>Use border-collapse: collapse to make table elements borders collapse into each other, producing a neater and easier to control look.</li>
+                <li>Use < thead >, < tbody >, and < tfoot > to break up your table into logical chunks and provide extra places to apply CSS to, so it is easier to layer styles on top of one another if required.</li>
+                <li>Use zebra striping to make alternative rows easier to read.</li>
+                <li>Use text-align to line up your < th > and < td > text, to make things neater and easier to follow.</li>
+            </ul>
+            <p>
+                A different way of designing tables:
+                <a href="https://alistapart.com/article/web-typography-tables/">Designing Tables to be Read, not Looked At</a>
+            </p>
         </article>
         <article id="debugging-css">
             <h2>Debugging CSS</h2>
+            <p>
+                How to access tools in various browsers and platforms: 
+                <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">
+                What Are Browser Developer Tools</a>
+            </p>
+            <p>
+                DOM has normalized HTML, the view source is HTML code as stored in the server.
+            </p>
+            <p>
+                You can edit the HTML via the Inspect option when right clicking the page.
+            </p>
+            <p>
+                DevTools can help you figure out which specificity is overriding a certain rule.
+            </p>
+            <p>
+                Questions to ask when debugging CSS:
+            </p>
+            <ol>
+                <li>Take a step back from the problem</li>
+                <li>Do you have valid HTML and CSS?</li>
+                <li>Are the property and value supported by the browser you are testing in?</li>
+                <li>Is something else overriding your CSS?</li>
+                <li>Make a reduced test case of the problem</li>
+            </ol>
+            <p>
+                For 1: basically, take a break. Think of something else. For 2: put the HTML and CSS through a validator
+                to pick up and fix any errors. For 3: self-explanatory. For 4: specificity! DevTools! For 5: 
+                "reduce an issue" by demonstrating the problem in the simplest way possible, with unrelated surrounding 
+                content and styling removed. Shows you really tried to solve problem, and makes it easier to ask for help.
+            </p>
         </article>
         <article id="organizing-your-css">
             <h2>Organizing your CSS</h2>
             <p>
-                (last one for CSS building blocks! reach before end of 10/8)
+                Best practices for writing CSS to make it easily maintainable: 
+            </p>
+            <p>
+                Does your project have a coding style guide? The team style guide should always win over your own 
+                personal preferences.
+            </p>
+            <p>
+                Keep it consistent. Having a set of rules you always follow reduces the amount of mental overhead needed
+                when writing CSS, as some of the decisions are already made. 
+            </p>
+            <p>
+                Comment your CSS. Good tip to add block of comments between logical sections in your stylesheet, to help 
+                locate diff sections quickly when scanning it. Can also comment on things where you made a particular 
+                decision for a reason.
+            </p>
+            <p>
+                Create logical sections in your stylesheet. Good idea to have all the common styling first, meaning all the 
+                styles which will generally apply unless you do something special with that element. GENERAL STYLES, UTILITIES,
+                SITEWIDE, and others based on context, page, or component.
+            </p>
+            <p>
+                Avoid overly-specific selectors. There will be times when making something more specific makes sense; however, 
+                this will generally be an exception rather than usual practice.
+            </p>
+            <p>
+                Break large stylesheets into multiple smaller ones.
+            </p>
+            <p>
+                These methodologies are essentially CSS coding guides that take a very structured approach to writing and 
+                organizing CSS. Typically they tend to render CSS more verbosely than you might have if you wrote and 
+                optimised every selector to a custom set of rules for that project.
+            </p>
+            <p>
+                However, you do gain a lot of structure by adopting one. Since many of these systems are widely used, other 
+                developers are more likely to understand the approach you are using and be able to write their own CSS in 
+                the same way, rather than having to work out your own personal methodology from scratch.
+            </p>
+            <p>
+                Most approaches stem from concept of Object Oriented CSS (OOCSS). There's also Block Element Modifier 
+                (BEM). Others like SMACSS, ITCSS, ACSS. Disadvantage is that they can seem overly complex, especially 
+                for smaller projects.
+            </p>
+            <p>
+                Another way to organize CSS is to build systems for it. e.g. pre-processors and post-processors, most 
+                popular pre-processor is Sass. Out of scope atm.
             </p>
         </article>
         <article id="fundamental-text-and-font-styling">
             <h2>Fundamental Text and Font Styling</h2>
+            <p>
+                Two CSS property categories used to style text:
+            </p>
+            <ul>
+                <li>font styles</li>
+                <li>text layout styles</li>
+            </ul>
+            <p>
+                Properties for styling fonts: 
+            </p>
+            <p>
+                color (self-explanatory)
+            </p>
+            <p>
+                font-family. Web safe fonts are available nearly everywhere. Five generic default names for fonts: 
+                serif, sans-serif, monospace, cursive, fantasy. Font stacks so that browser has multiple fonts it can 
+                choose from. 
+            </p>
+            <p>
+                font-size. Most common units px, em, rem. Standard in root element (html) is 16px, others have diff size.
+                Best to use rem unit whe nyou can, to keep things simple. Avoid setting the font-size of container elements 
+                where possible.
+            </p>
+            <p>
+                Four common properties to alter visual weight/emphasis of text:
+            </p>
+            <ul>
+                <li>
+                    font-style (normal, italic, or oblique values)
+                </li>
+                <li>
+                    font-weight (normal, bold) (lighter, bolder) (100-900)
+                </li>
+                <li>
+                    text-transform (none, uppercase, lowercase, capitalize, full-width)
+                </li>
+                <li>
+                    text-decoration (none, underline, overline, line-through)
+                </li>
+            </ul>
+            <p>
+                text-shadow: horizontal offset (px), vertical offset (px), blur radius, base shadow color. Can apply multiple
+                shadows to the same text, separate via comma.
+            </p>
+            <p>
+                Properties to affect text-layout:
+            </p>
+            <ul>
+                <li>
+                    text-align (left, right, center, justify)
+                </li>
+                <li>
+                    line-height (can take unitless value, acts as multiplier, considered best option. recommended 
+                    1.5-2, double spaced.) 
+                </li>
+                <li>
+                    letter-spacing and word-spacing (not used often)
+                </li>
+            </ul>
+            <p>
+                Others to explore once familiarized with the above:
+            </p>
+            <p>
+                Font styles: font-variable, font-kerning, font-feature-settings, font-variant-alternates, font-variant-caps,
+                font-variant-east-asian, font-variant-ligatures, font-variant-numeric, font-variant-position, font-size-adjust,
+                font-stretch, text-underline-position, text-rendering.
+            </p>
+            <p>
+                Text layout styles: text-indent, text-overflow, white-space, word-break, direction, hyphens, line-break, 
+                text-align-last, text-orientation, overflow-wrap, writing-mode. 
+            </p>
+            <p>
+                font shorthand: order is font-style, font-variant, font-weight, font-stretch, font-size, line-height, and 
+                font-family. Add (/) between font-size and line-height properties.
+            </p>
         </article>
         <article id="styling-lists">
             <h2>Styling Lists</h2>
+            <p>
+                Handling list spacing: need to adjust stypes so they keep same vertical spacing as surrounding environments, 
+                and the same horizontal spacing as each other. Setting font size on HTML, relative sizes to h2 and list/p
+                elements...
+            </p>
+            <p>
+                Should know three list-specific properties to start:
+            </p>
+            <ul>
+                <li>
+                    list-style-type = sets types of bullets (many types)
+                </li>
+                <li>
+                    list-style-position = sets whether bullets inside or outside lists (default outside)
+                </li>
+                <li>
+                    list-style-image = custom image for bullet
+                </li>
+            </ul>
+            <p>
+                The three above can be set up using list-style shorthand, type image position. 
+            </p>
+            <p>
+                start attribute for ol can start list count on number other than 1. reversed attribute will start list counting
+                down instead of up. value attribute sets list items to specific numerical values.
+            </p>
         </article>
         <article id="styling-links">
             <h2>Styling Links</h2>
+            <p>
+                Five link states:
+            </p>
+            <ul>
+                <li>link (default underline)</li>
+                <li>visited (default purple color)</li>
+                <li>hover (default hand icon cursor)</li> 
+                <li>focus (default black square outline)</li>
+                <li>active (default red color)</li>
+            </ul>
+            <p>
+                Default styles have been around a LONG time, so don't stray too far from expected behaviors. You should at least
+                use underline for links only, and make them react in some way when hovered/focused, and in slighly diff way when 
+                activated. 
+            </p>
+            <p>
+                Style them in order: a, a:link, a:visited, a:focus, a:hover, a:active. Mnemonic LoVe Fears HAte. 
+            </p>
+            <p>
+                Common to include icons on links to provide more of an indicator as to what kind of content the link points to. 
+                Use a[href*="#"] { } with properties background, background-size, and padding-right (or left).
+            </p>
+            <p>
+                Links quite commonly styled to look and behave like buttons. 
+            </p>
         </article>
         <article id="web-fonts">
             <h2>Web Fonts</h2>
+            <p>
+                To learn how to apply web fonts to a web page, using either a third party service, or by writing your own code.
+            </p>
+            <p>
+                You can use font stack (with preferred, web-safe, and default fonts), but requires more testing to ensure it works. 
+                CSS allows you to specify font files, available on the web, to be downloaded along with your website as it's accessed. 
+                This means that any browser supporting this CSS feature can display the fonts you've specifically chosen. 
+            </p>
+            <p>
+                At start of CSS, have @font-face rule. @font-face { font-family: "myFontName"; src: url("myFontName.woff2"); } Use myFontName 
+                (whatever you named it) to apply custom font to anything you like. 
+            </p>
+            <p>
+                Finding fonts, generating required code, implementing code. Kind of boring, skip for now. You can use online font 
+                services like Google Fonts (free!) and add code to HTML and CSS files.
+            </p>
         </article>
         <article id="intro-to-css-layout">
             <h2>Intro to CSS Layout</h2>
+            <p>
+                CSS page layout techniques allow us to take elements contained in a web page and control where they're positioned relative to the 
+                following factors: their default position in normal layout flow, the other elements around them, their parent container, and the 
+                main viewport/window.
+            </p>
+            <p>
+                List of page layout techniques covered here:
+            </p>
+            <ul>
+                <li>normal flow</li>
+                <li>display property</li>
+                <li>flexbox</li>
+                <li>grid</li>
+                <li>floats</li>
+                <li>positioning</li>
+                <li>table layout</li>
+                <li>multipe-column layout</li>
+            </ul>
+            <p>
+                Normal flow is how browser lays out HTML pages by default when you do nothing to control page layout.
+            </p>
+            <p>
+                Main methods for achieveing page layout in CSS all involve specifying values for the display property. Since you can change the value 
+                of display for any element, you can pick HTML elements for their semantic meaning without being concerned about how they look. The way 
+                they look is something you can change.
+            </p>
+            <p>
+                display:block breaks into a new line. display:inline doesn't break into new line (side by side).
+            </p>
+            <p>
+                Flexbox (aka Flexible Box Layout) is designed to make it easy to lay things out in one dimension, either as a row OR as a column. 
+            </p>
+            <p>
+                display:flex on element, becomes flex container, and direct children become flex items. Defaults on flex container are 
+                flex-direction:row and align-items:stretch. Can apply properties to flex items as well.
+            </p>
+            <p>
+                Grid Layout is designed to make it easy to lay things out in two dimensions, lining things up in rows AND columns.
+            </p>
+            <p>
+                display:grid on element, with grid-template-columns and grid-template-rows properties to set sizes of columns/rows. No rules for 
+                child elements needed, automatically placed. Once you have a grid, you can explicitly place items, rather than relying on 
+                auto-placement. To set start and end line of each child, use grid-column and grid-row properties. This causes the items to span 
+                multiple tracks.
+            </p>
+            <p>
+                Float properties moves element to left or right and removed from normal flow, and surrounding content FLOATS around it. Four 
+                possible properties: left, right, none, and inherit.
+            </p>
+            <p>
+                Positioning techniques (some relying on position property) to move an element from where it would otherwise be placed in normal flow over 
+                to another location. Five types of positioning: 
+            </p>
+            <ul>
+                <li>static positioning (default, from normal flow)</li>
+                <li>relative positioning</li>
+                <li>absolute positioning</li>
+                <li>fixed positioning</li>
+                <li>sticky positioning</li>
+            </ul>
+            <p>
+                For relative positioning, position:relative and top/bottom/left/right properties. Element being pushed on it's given properties. 
+            </p>
+            <p>
+                For absolute positioning, position:absolute and top/bottom/left/right properties. Element... 
+            </p>
         </article>
         <article id="normal-flow">
             <h2>Normal Flow</h2>
