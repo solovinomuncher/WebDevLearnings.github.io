@@ -107,11 +107,11 @@ a:visited {
   color: #0000FF;
   background: #BFFF00;
 }
-
+/*
 a:focus {
   asdf /* no styling */
 }
-
+*/
 a:hover {
   text-decoration: none;
   color: #BFFF00;
